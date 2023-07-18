@@ -71,7 +71,6 @@ const css = {
 };
 
 function convertToCssString(css: Dictionary): string {
-	console.log("¢¢¢¢¢¢¢¢ convertToCssString");
 	return Object.keys(css).reduce((styleString, propName) => {
 		const propValue = css[propName];
 		if (typeof (propValue) === 'object') {
