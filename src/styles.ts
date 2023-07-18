@@ -23,7 +23,8 @@ const css = {
 		'min-width': '30px'
 	},
 	[`.${containerClass}.horizontal`]: {
-		'display': 'table',
+		'display': 'flex',
+		'flex-direction': 'row'
 	},
 	[`.${containerClass}.horizontal > .${stretcherElementClass}`]: stretcherElementHorizontalClass,
 	[`.${containerClass}.horizontal > .${wrapperClass}`]: horizontalWrapperClass,
