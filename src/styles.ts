@@ -2,18 +2,12 @@ import { containerClass, disbaleTouchActions, dropPlaceholderFlexContainerClass,
 import { Dictionary } from './interfaces';
 
 const verticalWrapperClass = {
-	'overflow': 'hidden',
-	'display': 'block'
 }
 
 const horizontalWrapperClass = {
-	'height': '100%',
-	'display': 'table-cell',
-	'vertical-align': 'top',
 }
 
 const stretcherElementHorizontalClass = {
-	'display': 'inline-block'
 }
 
 const css = {
@@ -38,9 +32,7 @@ const css = {
 		'transition': 'transform ease',
 	},
 	[`.${ghostClass}`]: {
-		'box-sizing': 'border-box',
-		// 'background-color': 'transparent',
-		// '-webkit-font-smoothing': 'subpixel-antialiased'
+		'box-sizing': 'border-box'
 	},
 	[`.${ghostClass}.animated`]: {
 		'transition': 'all ease-in-out'
@@ -64,19 +56,10 @@ const css = {
 		'flex': '1'
 	},
 	[`.${containerClass}.horizontal > .${dropPlaceholderWrapperClass}`]: {
-		'height': '100%',
-		'overflow': 'hidden',
-		'display': 'table-cell',
-		'vertical-align': 'top',
 	},
 	[`.${containerClass}.vertical > .${dropPlaceholderWrapperClass}`]: {
-		'overflow': 'hidden',
-		'display': 'block',
-		'width': '100%',
 	},
 	[`.${dropPlaceholderFlexContainerClass}`]: {
-		'width': '100%',
-		'height': '100%',
 		'display': 'flex',
 		'justify-content': 'stretch',
 		'align-items': 'stretch'
@@ -88,6 +71,7 @@ const css = {
 };
 
 function convertToCssString(css: Dictionary): string {
+	console.log("¢¢¢¢¢¢¢¢ convertToCssString");
 	return Object.keys(css).reduce((styleString, propName) => {
 		const propValue = css[propName];
 		if (typeof (propValue) === 'object') {
